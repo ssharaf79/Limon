@@ -1,0 +1,181 @@
+/*----------------------------------------------------------------------------
+  @group Structure
+----------------------------------------------------------------------------*/
+
+body{
+  margin:0;
+  padding:0;
+  background:#eee;
+}
+
+.scroller{
+  border:1px solid #cccecf;
+  border-bottom:1px solid #b2b3b4;
+  overflow:auto;
+}
+
+table.wrapper{
+  width:100%;
+  border-spacing:0;
+  border-collapse:collapse;
+  background:#fff;
+}
+table.wrapper td.line-numbers{
+  padding:0;
+  width:1%;
+  vertical-align:top;
+  background:#f8f8f8;
+}
+table.wrapper td.source{
+  padding:0;
+  vertical-align:top;
+  overflow:auto;
+}
+
+/* @end */
+
+/*----------------------------------------------------------------------------
+  @group Line Numbers
+----------------------------------------------------------------------------*/
+
+table.line-numbers{
+  width:100%;
+  border-spacing:0;
+  border-collapse:collapse;
+  font-size:11px;
+  font-family:Menlo;
+  color:#888;
+  background:#f8f8f8;
+}
+
+table.line-numbers .heading{
+  text-transform:uppercase;
+  text-align:center;
+  font-family:"Helvetica Neue";
+  font-size:8px;
+  font-weight:bold;
+  color:#555;
+}
+table.line-numbers .heading td{
+  height:13px;
+  padding:3px 5px 1px 5px;
+  background:-webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#e5e5e5));
+  border-bottom:1px solid #f2f2f2;
+}
+
+table.line-numbers .lines td{
+  padding:0 5px;
+}
+table.line-numbers .lines td.old-lines{
+  border-right:1px solid #e5e5e5;
+}
+
+table.line-numbers .lines td span.topline{
+  display:block;
+  height:1px;
+  width:100%;
+  padding:0 5px;
+  margin-left:-5px;
+  overflow:hidden;
+  background:#d3d3d3;
+}
+
+table.line-numbers td.spacer{
+  font-size:1px;
+  width:2px;
+  vertical-align:top;
+}
+
+
+.line-numbers .line, .line-numbers .blankline{
+  display:block;
+  padding:2px 0 0 0;
+  text-align:right;
+  line-height:15px;
+}
+
+.line-numbers .line:last-child{
+  padding-bottom:5px;
+}
+
+/* @end */
+
+/*----------------------------------------------------------------------------
+  @group Source Code
+----------------------------------------------------------------------------*/
+
+table.wrapper td.source{
+  font-family:Menlo;
+  font-size:11px;
+  line-height:15px;
+  color:#666;
+}
+
+.source div{
+  padding:2px 0 0 5px;
+  white-space:pre;
+}
+
+.source div:first-child{
+  padding-top:5px;
+}
+.source div:last-child{
+  padding-bottom:5px;
+}
+
+.source .normal, .source .change_set_marker{
+  border-left:1px solid #bfbfbf;
+}
+
+.source .change_set_marker{
+  color:#999;
+}
+
+.source .added{
+  color:#001e00;
+  background:#ddffdd;
+  border-left:1px solid #9cbd9c;
+}
+
+.source .removed{
+  color:#740000;
+  background:#ffdddd;
+  border-left:1px solid #d69c9c;
+}
+
+/* @end */
+
+/*----------------------------------------------------------------------------
+  @group Images
+----------------------------------------------------------------------------*/
+
+.image{
+  margin:25px auto;
+  text-align:center;
+
+}
+.image img{
+  max-width:80%;
+  border:1px solid #fff;
+  -webkit-box-shadow:0 0 10px rgba(0,0,0,0.5);
+  background-repeat:repeat;
+  background-image:url(data:image/gif;base64,R0lGODlhCgAKAIAAAOXl5f///yH5BAAAAAAALAAAAAAKAAoAAAIRhB2ZhxoM3GMSykqd1VltzxQAOw==);
+}
+
+/* @end */
+
+/*----------------------------------------------------------------------------
+  @group Messages
+----------------------------------------------------------------------------*/
+
+p.message{
+  font-family:"Helvetica Neue";
+  margin:25px 0;
+  font-size:18px;
+  font-weight:300;
+  text-align:center;
+  color:#999;
+  text-shadow:1px 1px rgba(255,255,255,1.0);
+}
+
+/* @end */

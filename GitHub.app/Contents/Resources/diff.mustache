@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="{{{cssPath}}}" type="text/css" />
+</head>
+<body>
+  <div class="scroller">
+
+    {{# isTextualDiff }}
+      <table class="wrapper">
+        <tr>
+          <td class="line-numbers">
+            <table class="line-numbers">
+              <tr class="heading">
+                <td class="old">
+                  Old
+                </td>
+                <td class="new">
+                  New
+                </td>
+              </tr>
+              <tr class="lines">
+                <td class="old-lines">
+                  <span class="topline"></span>
+                  {{# diffLines }}
+                    {{# shouldShowLineNumber }}
+                      {{# oldLineNumber }}
+                        <span class="line">{{ oldLineNumber }}</span>
+                      {{/ oldLineNumber }}
+
+                      {{^ oldLineNumber }}
+                        <span class="blankline">&nbsp;</span>
+                      {{/ oldLineNumber }}
+                    {{/ shouldShowLineNumber }}
+
+                    {{^ shouldShowLineNumber }}
+                      {{^ isFirstLine }}
+                        <span class="line">...</span>
+                      {{/ isFirstLine }}
+                    {{/ shouldShowLineNumber}}
+                  {{/ diffLines }}
+                </td>
+                <td class="new-lines">
+                  <span class="topline"></span>
+                  {{# diffLines }}
+                    {{# shouldShowLineNumber }}
+                      {{# ourNewLineNumber }}
+                        <span class="line">{{ ourNewLineNumber }}</span>
+                      {{/ ourNewLineNumber }}
+
+                      {{^ ourNewLineNumber }}
+                        <span class="blankline">&nbsp;</span>
+                      {{/ ourNewLineNumber }}
+                    {{/ shouldShowLineNumber }}
+
+                    {{^ shouldShowLineNumber }}
+                      {{^ isFirstLine }}
+                        <span class="line">...</span>
+                      {{/ isFirstLine }}
+                    {{/ shouldShowLineNumber}}
+                  {{/ diffLines }}
+                </td>
+              </tr>
+            </table>
+          </td>
+
+          <td class="source">
+            {{# diffLines }}
+              <div class="{{cssClass}}">{{ string }}</div>
+            {{/ diffLines }}
+          </td>
+        </tr>
+      </table>
+    {{/ isTextualDiff }}
+
+    {{# imagePath }}
+      <div class="image"><img src="{{{imagePath}}}" /></div>
+    {{/ imagePath }}
+
+    {{# message }}
+      <p class="message">{{message}}</p>
+    {{/ message }}
+
+  </div>
+</body>
+</html>
